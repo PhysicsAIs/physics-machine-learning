@@ -21,11 +21,11 @@ As we continue to harness the strengths of both physics and machine learning, we
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/physics-ml.git
+    git clone https://github.com/PhysicsAIs/physics-machine-learning.git
     ```
 2. **Navigate to the project directory:**
     ```bash
-    cd physics-ml
+    cd physics-machine-learning
     ```
 3. **Install the required dependencies:**
     ```bash
