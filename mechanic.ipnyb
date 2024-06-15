@@ -1,0 +1,35 @@
+# Jupyter Notebook for Physics Mechanics with Plotting
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Introduction to Mechanics
+## Mechanics is the branch of physics that deals with the study of motion, forces, and energy. It forms the foundation of classical physics and helps us understand the physical world around us.
+
+### Newton's Laws of Motion
+1. **First Law (Law of Inertia):** An object will remain at rest or in uniform motion unless acted upon by an external force.
+2. **Second Law (Law of Acceleration):** The acceleration of an object is directly proportional to the force acting on it and inversely proportional to its mass (F = ma).
+3. **Third Law (Law of Action and Reaction):** For every action, there is an equal and opposite reaction.
+
+## Examples of Mechanics Concepts
+
+### Example: Plotting Motion of an Object
+Let's visualize the motion of an object under constant acceleration using a plot.
+
+### Constants
+initial_velocity = 0  # m/s
+acceleration = 2  # m/s^2
+time = np.linspace(0, 10, 100)
+
+### Calculating Position
+position = 0.5 * acceleration * time ** 2 + initial_velocity * time
+
+### Plotting Position vs Time
+plt.figure(figsize=(10, 6))
+plt.plot(time, position, label='Position vs Time')
+plt.title('Motion of an Object under Constant Acceleration')
+plt.xlabel('Time (s)')
+plt.ylabel('Position (m)')
+plt.grid(True)
+plt.legend()
+plt.show()
