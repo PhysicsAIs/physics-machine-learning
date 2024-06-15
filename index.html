@@ -7,6 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physics Book</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional inline styling for demonstration purposes */
+        .container {
+            display: flex;
+        }
+        .menu {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,7 +57,19 @@
             </div>
         </div>
     </div>
-	<script src="script.js"></script>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
