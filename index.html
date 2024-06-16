@@ -11,32 +11,47 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+
         .container {
             width: 80%;
             margin: 0 auto;
             padding: 20px;
         }
+
         .section {
             background: #fff;
             margin: 20px 0;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: flex-start;
+            overflow: hidden;
         }
+
         .section img {
-            max-width: 38%; /* Reduced maximum width */
+            float: left; /* Float image to the left */
+            max-width: 40%; /* Maximum width of the image */
             height: auto;
             border-radius: 8px;
-            margin-right: 20px;
+            margin: 0 20px 20px 0; /* Margin to create space around the image */
         }
+
         .section h2 {
             margin-top: 0;
         }
+
         .section-content {
-            max-width: 50%;
+            text-align: justify; /* Justify text for a more newspaper-like look */
         }
+
+        .section-content p,
+        .section-content ol {
+            margin: 0 0 10px;
+        }
+
+        .section-content li {
+            margin: 0 0 5px;
+        }
+
 
     </style>
 </head>
@@ -162,6 +177,7 @@
             alt: "Production Image"
           }
         ];
+
         document.addEventListener("DOMContentLoaded", function() {
         const container = document.getElementById("content");
             data.forEach(section => {
@@ -175,7 +191,7 @@
                     } else if (/^\d+\./.test(line.trim())) {
                         return `<li>${line.trim().substring(2).trim()}</li>`;
                     } else if (line.trim() === '') {
-                        return '</ol>';
+                        return '</li></ol>';
                     } else {
                         return `<p>${line.trim()}</p>`;
                     }
@@ -196,6 +212,7 @@
                 container.appendChild(sectionDiv);
             });
         });
+
     </script>
 </body>
 </html>
