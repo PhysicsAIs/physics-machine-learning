@@ -27,6 +27,12 @@
             overflow: hidden;
         }
 
+        .section-header {
+            text-align: center;
+            width: 100%;
+            margin-top: 0;
+        }
+
         .section img {
             float: left; /* Float image to the left */
             max-width: 40%; /* Maximum width of the image */
@@ -203,6 +209,7 @@
                 }
 
                 sectionDiv.innerHTML = `
+                     <h2 class="section-header">${section.title}</h2>
                     <img src="${section.imageSrc}" alt="${section.alt}">
                     <div class="section-content">
                         <h2>${section.title}</h2>
