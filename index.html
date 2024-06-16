@@ -167,11 +167,30 @@
             data.forEach(section => {
                 const sectionDiv = document.createElement("div");
                 sectionDiv.className = "section";
+
+                // Convert the content to a more readable format by creating lists for numbered items
+                let formattedContent = section.content.split('\n').map(line => {
+                    if (line.trim().startsWith('1.')) {
+                        return `<ol><li>${line.trim().substring(2).trim()}`;
+                    } else if (/^\d+\./.test(line.trim())) {
+                        return `<li>${line.trim().substring(2).trim()}</li>`;
+                    } else if (line.trim() === '') {
+                        return '</ol>';
+                    } else {
+                        return `<p>${line.trim()}</p>`;
+                    }
+                }).join('');
+
+                // Close any unclosed <ol> tags
+                if (formattedContent.includes('<ol>') && !formattedContent.includes('</ol>')) {
+                    formattedContent += '</ol>';
+                }
+
                 sectionDiv.innerHTML = `
                     <img src="${section.imageSrc}" alt="${section.alt}">
                     <div class="section-content">
                         <h2>${section.title}</h2>
-                        <p>${section.content}</p>
+                        ${formattedContent}
                     </div>
                 `;
                 container.appendChild(sectionDiv);
