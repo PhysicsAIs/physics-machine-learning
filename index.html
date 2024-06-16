@@ -170,7 +170,7 @@
 
                 // Convert the content to a more readable format by creating lists for numbered items
                 let formattedContent = section.content.split('\n').map(line => {
-                    if (line.trim().startsWith('1.')) {
+                    if (line.trim().startsWith('include:')) {
                         return `<ol><li>${line.trim().substring(2).trim()}`;
                     } else if (/^\d+\./.test(line.trim())) {
                         return `<li>${line.trim().substring(2).trim()}</li>`;
