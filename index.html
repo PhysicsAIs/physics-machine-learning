@@ -22,15 +22,22 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-start;
         }
         .section img {
-            max-width: 37%;
+            max-width: 50%; /* Reduced maximum width */
             height: auto;
             border-radius: 8px;
+            margin-right: 20px;
         }
         .section h2 {
             margin-top: 0;
         }
+        .section-content {
+            max-width: 37%;
+        }
+
     </style>
 </head>
 <body>
@@ -155,16 +162,17 @@
             alt: "Production Image"
           }
         ];
-
         document.addEventListener("DOMContentLoaded", function() {
-            const container = document.getElementById("content");
+        const container = document.getElementById("content");
             data.forEach(section => {
                 const sectionDiv = document.createElement("div");
                 sectionDiv.className = "section";
                 sectionDiv.innerHTML = `
-                    <h2>${section.title}</h2>
                     <img src="${section.imageSrc}" alt="${section.alt}">
-                    <p>${section.content}</p>
+                    <div class="section-content">
+                        <h2>${section.title}</h2>
+                        <p>${section.content}</p>
+                    </div>
                 `;
                 container.appendChild(sectionDiv);
             });
